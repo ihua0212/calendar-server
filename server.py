@@ -47,3 +47,8 @@ def push():
 
     res = requests.post(url, json=payload)
     return res.json()
+
+# ✅ Zeabur 必须监听 0.0.0.0 和 PORT 环境变量
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host="0.0.0.0", port=port)
